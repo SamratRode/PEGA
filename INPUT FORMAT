@@ -1,0 +1,26 @@
+DEFINE CDA-CODE (00011) TITLE (ORAL ASSESSEMENT CHILD)                  
+CATEGORY (I);                                                           
+ 1: IF NOT DEGREE (C) THEN                                            
+        GO-TO (3);                                                      
+ 2: IF TOOTH-HISTORY ((00011,00375,00509,00510,01101-01103,01110-01130, 
+        01140,01200-01204,01206,11201-11203,11301-11303,                
+        11401-11403,11501-11503),                                       
+        WL-001-EXAMS) THEN                                              
+        DENY (K05)                                                      
+    ELSE                                                               
+        PAY-AS (00011);                                                 
+ 3: IF NOT DEGREE (D,I) THEN                                            
+        GO-TO (5);                                                      
+ 4: IF TOOTH-HISTORY ((00011,00375,00509,00510,01101-01103,01110-01130, 
+        01140,01200-01204,01206,11201-11203,11301-11303,                
+        11401-11403,11501-11503),                                       
+        WL-001-EXAMS) THEN                                              
+        DENY (K15)                                                      
+    ELSE                                                                
+        PAY-AS (00011);                                                 
+ 5: IF TOOTH-HISTORY ((00011,01201-01204,01206,11201-11203,11301-11303, 
+        11401-11403,11501-11503,00375),                                
+        WL-001-EXAMS) THEN                                              
+        DENY (K15)                                                      
+    ELSE                                                                
+        PAY-AS (00011);  
