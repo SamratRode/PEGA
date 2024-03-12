@@ -1,0 +1,31 @@
+<Rules>
+
+    <Rule>
+
+        <CDA-CODE>00011</CDA-CODE>
+
+        <TITLE>ORAL ASSESSEMENT CHILD</TITLE>
+
+        <CATEGORY>I</CATEGORY>
+
+        <Conditions>
+
+            <Condition>
+
+                <ConditionID>1</ConditionID>
+
+                <ConditionText>IF NOT DEGREE (C) THEN</ConditionText>
+
+                <Action>PAY-AS (15402)</Action>
+
+            </Condition>
+
+            <!-- Additional conditions/actions can be listed here -->
+
+        </Conditions>
+
+    </Rule>
+
+    <!-- Additional rules can be listed here -->
+
+</Rules>
