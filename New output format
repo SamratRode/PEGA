@@ -1,0 +1,45 @@
+<Conditions>
+            <Condition>
+                <ConditionID>1</ConditionID>
+                <ConditionText>IF NOT DEGREE (C) THEN</ConditionText>
+                <Action>GO-TO (3)</Action>
+            </Condition>
+            <Condition>
+                <ConditionID>2</ConditionID>
+                <ConditionText>IF TOOTH-HISTORY ((00011,00375,00509,00510,01101-01103,01110-01130,
+        01140,01200-01204,01206,11201-11203,11301-11303,
+        11401-11403,11501-11503),
+        WL-001-EXAMS) THEN
+        DENY (K05)
+    ELSE
+        PAY-AS (00011);</ConditionText>
+                <Action></Action>
+            </Condition>
+            <Condition>
+                <ConditionID>3</ConditionID>
+                <ConditionText>IF NOT DEGREE (D,I) THEN</ConditionText>
+                <Action>GO-TO (5)</Action>
+            </Condition>
+            <Condition>
+                <ConditionID>4</ConditionID>
+                <ConditionText>IF TOOTH-HISTORY ((00011,00375,00509,00510,01101-01103,01110-01130,
+        01140,01200-01204,01206,11201-11203,11301-11303,
+        11401-11403,11501-11503),
+        WL-001-EXAMS) THEN
+        DENY (K15)
+    ELSE
+        PAY-AS (00011);</ConditionText>
+                <Action></Action>
+            </Condition>
+            <Condition>
+                <ConditionID>5</ConditionID>
+                <ConditionText>IF TOOTH-HISTORY ((00011,01201-01204,01206,11201-11203,11301-11303,
+        11401-11403,11501-11503,00375),
+        WL-001-EXAMS) THEN
+        DENY (K15)
+    ELSE
+        PAY-AS (00011);</ConditionText>
+                <Action></Action>
+            </Condition>
+        </Conditions>
+
