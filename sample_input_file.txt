@@ -1,0 +1,44 @@
+DEFINE CDA-CODE (00011) TITLE (ORAL ASSESSEMENT CHILD)                  
+CATEGORY (I);                                                           
+ 1: IF NOT DEGREE (C) THEN                                              
+        GO-TO (3);                                                      
+ 2: IF TOOTH-HISTORY ((00011,00375,00509,00510,01101-01103,01110-01130,01140,01200-01204,01206,11201-11203,11301-11303,11401-11403,11501-11503),WL-001-EXAMS) THEN                                              
+        DENY (K05)                                                      
+    ELSE                                                                
+        PAY-AS (00011);                                                 
+ 3: IF NOT DEGREE (D,I) THEN                                            
+        GO-TO (5);                                                      
+ 4: IF TOOTH-HISTORY ((00011,00375,00509,00510,01101-01103,01110-01130,01140,01200-01204,01206,11201-11203,11301-11303,11401-11403,11501-11503),WL-001-EXAMS) THEN                                              
+        DENY (K15)                                                      
+    ELSE                                                                
+        PAY-AS (00011);                                                 
+ 5: IF TOOTH-HISTORY ((00011,01201-01204,01206,11201-11203,11301-11303,11401-11403,11501-11503,00375),WL-001-EXAMS) THEN                                              
+        DENY (K15)                                                      
+    ELSE                                                                
+        PAY-AS (00011);                                                 
+DEFINE CDA-CODE (00218) TITLE (GRAFTS QUE)                              
+CATEGORY (III);                                                         
+ 1: IF REPORTED-WITH-TOOTH (00218) THEN                                 
+       REVIEW (H02);                                                    
+ 3: IF NOT PROVINCE (QUE) THEN                                          
+       GO-TO (5);                                                       
+ 5: PAY-AS (00218);                                                     
+DEFINE CDA-CODE (00219) TITLE (CU DENT EQUIL DT)                        
+CATEGORY (III);                                                         
+ 1: IF PATIENT-AGE (0,99) THEN                                          
+        PAY-AS (31310,L45);                                             
+ 2: PAY-AS (00219);                                                     
+DEFINE CDA-CODE (00220) TITLE (PU SEMI-PREC DT)                         
+CATEGORY (III);                                                         
+ 1: IF PROVINCE (QUE) THEN                                              
+       GO-TO (3);                                                       
+ 2: IF PATIENT-AGE (0,99) THEN                                          
+        PAY-AS (41215,L45);                                             
+ 3: PAY-AS (00220);                                                     
+DEFINE CDA-CODE (00221) TITLE (PL SEMI-PREC DT)                         
+CATEGORY (III);                                                         
+ 1: IF PROVINCE (QUE) THEN                                              
+       GO-TO (3);                                                       
+ 2: IF PATIENT-AGE (0,99) THEN                                          
+        PAY-AS (41225,L45);                                             
+ 3: PAY-AS (00221);  
