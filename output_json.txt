@@ -1,0 +1,85 @@
+[
+    {
+        "CDA-CODE": "00011",
+        "TITLE": "",
+        "CATEGORY": "I",
+        "Conditions": [
+            {
+                "ConditionText": "IF NOT DEGREE (C) THEN",
+                "Action": "GO-TO (3);"
+            },
+            {
+                "ConditionText": "IF TOOTH-HISTORY ((00011,00375,00509,00510,01101-01103,01110-01130,01140,01200-01204,01206,11201-11203,11301-11303,11401-11403,11501-11503),WL-001-EXAMS) THEN",       
+                "Action": "DENY (K05)"
+            },
+            {
+                "ConditionText": "IF NOT DEGREE (D,I) THEN",
+                "Action": "GO-TO (5);"
+            },
+            {
+                "ConditionText": "IF TOOTH-HISTORY ((00011,00375,00509,00510,01101-01103,01110-01130,01140,01200-01204,01206,11201-11203,11301-11303,11401-11403,11501-11503),WL-001-EXAMS) THEN",       
+                "Action": "DENY (K15)"
+            },
+            {
+                "ConditionText": "IF TOOTH-HISTORY ((00011,01201-01204,01206,11201-11203,11301-11303,11401-11403,11501-11503,00375),WL-001-EXAMS) THEN",
+                "Action": "DENY (K15)"
+            }
+        ]
+    },
+    {
+        "CDA-CODE": "00218",
+        "TITLE": "",
+        "CATEGORY": "III",
+        "Conditions": [
+            {
+                "ConditionText": "IF REPORTED-WITH-TOOTH (00218) THEN",
+                "Action": "REVIEW (H02);"
+            },
+            {
+                "ConditionText": "IF NOT PROVINCE (QUE) THEN",
+                "Action": "GO-TO (5);"
+            }
+        ]
+    },
+    {
+        "CDA-CODE": "00219",
+        "TITLE": "",
+        "CATEGORY": "III",
+        "Conditions": [
+            {
+                "ConditionText": "IF PATIENT-AGE (0,99) THEN",
+                "Action": "PAY-AS (31310,L45);"
+            }
+        ]
+    },
+    {
+        "CDA-CODE": "00220",
+        "TITLE": "",
+        "CATEGORY": "III",
+        "Conditions": [
+            {
+                "ConditionText": "IF PROVINCE (QUE) THEN",
+                "Action": "GO-TO (3);"
+            },
+            {
+                "ConditionText": "IF PATIENT-AGE (0,99) THEN",
+                "Action": "PAY-AS (41215,L45);"
+            }
+        ]
+    },
+    {
+        "CDA-CODE": "00221",
+        "TITLE": "",
+        "CATEGORY": "III",
+        "Conditions": [
+            {
+                "ConditionText": "IF PROVINCE (QUE) THEN",
+                "Action": "GO-TO (3);"
+            },
+            {
+                "ConditionText": "IF PATIENT-AGE (0,99) THEN",
+                "Action": "PAY-AS (41225,L45);"
+            }
+        ]
+    }
+]
